@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Telerik.Windows.Controls;component/Themes/FontResources.xaml" />
+        <ResourceDictionary Source="/Puchalapalli.WPF;component/Themes/Common.xaml" />
+        <ResourceDictionary Source="/Puchalapalli.WPF.Assets;component/Assets/Themes/Telerik/VisualStudio2013/TreeListView.xaml" />
+        <ResourceDictionary Source="/Puchalapalli.WPF.Assets;component/Assets/Themes/Telerik/VisualStudio2013/TreeView.xaml" />
+        <ResourceDictionary Source="/Puchalapalli.WPF.Assets;component/Assets/Themes/Telerik/VisualStudio2013/Window.Headerless.xaml" />
+        <ResourceDictionary Source="/Puchalapalli.WPF.Assets;component/Assets/Brushes.xaml" />
+        <ResourceDictionary Source="/Puchalapalli.WPF.Assets;component/Assets/Styles.xaml" />
+        <ResourceDictionary Source="/Puchalapalli.WPF.Assets;component/Assets/Images.xaml" />
+        <ResourceDictionary Source="/Puchalapalli.WPF.Assets;component/Themes/Generic/Telerik/Telerik.Windows.Controls.RadBreadcrumb.xaml" />
+        <ResourceDictionary Source="/Puchalapalli.WPF.Assets;component/Themes/Generic/Telerik/Telerik.Windows.Controls.RadLabel.xaml" />
+        <ResourceDictionary Source="/Puchalapalli.WPF.Controls.FileSystemExplorer;component/Themes/Generic/Puchalapalli/Puchalapalli.WPF.Controls.FileSystemExplorer.ExplorerItemPanel.xaml" />
+        <ResourceDictionary Source="/Puchalapalli.WPF.Controls;component/Assets/Styles/Buttons/MediaButtons.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

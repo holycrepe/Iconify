@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <PostSharpDisableSystemBindingPolicies>True</PostSharpDisableSystemBindingPolicies>
+    <PostSharpDisableDefaultBindingRedirects>True</PostSharpDisableDefaultBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <DontImportPostSharp>True</DontImportPostSharp>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{81504535-6D10-4CB7-BB04-84AE1AF75F1F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FoldMyIcons</RootNamespace>
+    <AssemblyName>FoldMyIcons</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+    <PostSharpIgnoredPackages>PostSharp.Patterns.Threading</PostSharpIgnoredPackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>FoldMyIcons.Startup</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Assets\Icons\DefaultIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AlphaFS, Version=2.1.0.0, Culture=neutral, PublicKeyToken=4d31a58f7d7ad5c9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\AlphaFS.2.1.2\lib\net452\AlphaFS.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Commander, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Commander.Fody.0.8.1.2\lib\Commander.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FluentCommandLineParser">
+      <HintPath>..\..\..\packages\FluentCommandLineParser.1.4.3\lib\net35\FluentCommandLineParser.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gu.Wpf.Media, Version=0.5.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Gu.Wpf.Media.0.5.0.1\lib\net45\Gu.Wpf.Media.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IconLib, Version=0.80.0.0, Culture=neutral, PublicKeyToken=49498878c23fee56, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\IconLib.0.80.0.0\lib\net452\IconLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="INIFileParser, Version=2.3.0.0, Culture=neutral, PublicKeyToken=79af7b307b65cf3c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\ini-parser.2.3.0\lib\net20\INIFileParser.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JetBrains.Annotations, Version=10.2.1.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\JetBrains.Annotations.10.2.1\lib\net\JetBrains.Annotations.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=1.4.0.42, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\MahApps.Metro.1.4.0\lib\net45\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro.IconPacks, Version=1.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\MahApps.Metro.IconPacks.1.6.0\lib\net46\MahApps.Metro.IconPacks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nito.AsyncEx, Version=4.0.1.0, Culture=neutral, PublicKeyToken=09d695329ca273b7, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Nito.AsyncEx.StrongNamed.4.0.1-pre\lib\net45\Nito.AsyncEx.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Concurrent, Version=4.0.1.0, Culture=neutral, PublicKeyToken=09d695329ca273b7, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Nito.AsyncEx.StrongNamed.4.0.1-pre\lib\net45\Nito.AsyncEx.Concurrent.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Enlightenment, Version=4.0.1.0, Culture=neutral, PublicKeyToken=09d695329ca273b7, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Nito.AsyncEx.StrongNamed.4.0.1-pre\lib\net45\Nito.AsyncEx.Enlightenment.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\NLog.4.3.11\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PostSharp, Version=4.3.24.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\PostSharp.4.3.24\lib\net35-client\PostSharp.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PostSharp.Patterns.Common, Version=4.3.24.0, Culture=neutral, PublicKeyToken=e7f631e6ce13f078, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\PostSharp.Patterns.Common.4.3.24\lib\net45\PostSharp.Patterns.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PostSharp.Patterns.Diagnostics, Version=4.3.24.0, Culture=neutral, PublicKeyToken=e7f631e6ce13f078, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\PostSharp.Patterns.Diagnostics.4.3.24\lib\net40\PostSharp.Patterns.Diagnostics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PostSharp.Patterns.Model, Version=4.3.24.0, Culture=neutral, PublicKeyToken=e7f631e6ce13f078, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\PostSharp.Patterns.Model.4.3.24\lib\net40\PostSharp.Patterns.Model.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\MahApps.Metro.1.4.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Telerik.Windows.Controls, Version=2016.3.914.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Telerik.Windows.Controls.2016.3.914\lib\net45\Telerik.Windows.Controls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Data, Version=2016.3.914.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Telerik.Windows.Controls.Data.2016.3.914\lib\net45\Telerik.Windows.Controls.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView, Version=2016.3.914.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Telerik.Windows.Controls.GridView.2016.3.914\lib\net45\Telerik.Windows.Controls.GridView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2016.3.914.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Telerik.Windows.Controls.Input.2016.3.914\lib\net45\Telerik.Windows.Controls.Input.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2016.3.914.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Telerik.Windows.Controls.Navigation.2016.3.914\lib\net45\Telerik.Windows.Controls.Navigation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data, Version=2016.3.914.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Telerik.Windows.Data.2016.3.914\lib\net45\Telerik.Windows.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="YamlDotNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\YamlDotNet.Signed.4.0.0\lib\net35\YamlDotNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Properties\DesignTimeResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
+    </Page>
+    <Compile Include="Models\Folders\IconRootFolders.cs" />
+    <Compile Include="Models\Folders\IconRootType.cs" />
+    <Compile Include="Models\Folders\IconRootInfos.cs" />
+    <Compile Include="Models\Folders\IconRoots.cs" />
+    <Compile Include="Commands\FolderIconCommand.cs" />
+    <Compile Include="Commands\FolderIconCommandArguments.cs" />
+    <Compile Include="Models\Folders\IconRootTypes.cs" />
+    <Compile Include="Models\Generation\IconGenerationExpandedTemplates.cs" />
+    <Compile Include="Models\Generation\IconGenerationFolder.cs" />
+    <Compile Include="Models\Generation\IconGenerationPath.cs" />
+    <Compile Include="Models\Generation\IconGenerationResult.cs" />
+    <Compile Include="Models\Generation\IconGenerationRoot.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Favorites\FavoritePaths.cs" />
+    <Compile Include="Models\Favorites\FavoritePath.cs" />
+    <Compile Include="Models\Favorites\FavoritePathType.cs" />
+    <Compile Include="Models\Generation\IconGenerationTemplates.cs" />
+    <Compile Include="Properties\Settings\LibSettings\LibThemeSettings.cs" />
+    <Compile Include="Properties\Settings\AllSettings\AllSettings.cs" />
+    <Compile Include="Properties\Settings\AllSettings\AllSettingsBase.cs" />
+    <Compile Include="Properties\Settings\AppSettings\WindowSettings.cs" />
+    <Compile Include="Properties\Settings\Binding\AppExtension.cs" />
+    <Compile Include="Properties\Settings\Binding\LibraryExtensions.cs" />
+    <Compile Include="Properties\Settings\LibSettings\LibToggleSettings.cs" />
+    <Compile Include="Properties\Settings\LibSettings\LibDirectorySettings.cs" />
+    <Compile Include="Properties\Settings\LibSettings\LibSettings.cs" />
+    <Compile Include="Properties\Settings\LibSettings\LibSettings.Base.cs" />
+    <Compile Include="Properties\Settings\LibSettings\LibSettings.Derived.cs" />
+    <Compile Include="Properties\Settings\AppSettings\AppSettings.cs" />
+    <Compile Include="Properties\Settings\AppSettings\AppSettingsBase.cs" />
+    <Compile Include="Serialization\Namespaces\Namespaces.cs" />
+    <Compile Include="Serialization\Namespaces\Prefixes.cs" />
+    <Compile Include="Startup.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <None Include="nlog.config" />
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ViewModels\MainViewModelNew.cs" />
+    <Compile Include="Models\Generation\IconGenerationSource.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\Arguments\ApplicationArguments.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="packages.config">
+      <DependentUpon>App.xaml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Resource Include="Themes\genericvista.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Themes\generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(VSDirSourcePuchalapalli)\Puchalapalli.Base\Puchalapalli.Base\Puchalapalli.Base.csproj">
+      <Project>{7AFA65D9-E0ED-4C73-ABFA-7D82EE373C56}</Project>
+      <Name>Puchalapalli.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="$(VSDirSourcePuchalapalli)\Puchalapalli.Lib\Puchalapalli.csproj">
+      <Project>{451ADF58-9F50-4356-847D-F865EB74B96A}</Project>
+      <Name>Puchalapalli</Name>
+    </ProjectReference>
+    <ProjectReference Include="$(VSDirSourcePuchalapalli)\Puchalapalli.Icons\Puchalapalli.Icons\Puchalapalli.Icons.csproj">
+      <Project>{07D17BEF-4343-42EB-8D84-3205E6AD4EFB}</Project>
+      <Name>Puchalapalli.Icons</Name>
+    </ProjectReference>
+    <ProjectReference Include="$(VSDirSourcePuchalapalli)\Puchalapalli.Presentation\Puchalapalli.Presentation.Base\Puchalapalli.Presentation.Base.csproj">
+      <Project>{BDE5443E-9415-4468-97D8-D53CED4FBC69}</Project>
+      <Name>Puchalapalli.Presentation.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="$(VSDirSourcePuchalapalli)\Puchalapalli.Serialization\Puchalapalli.Serialization\Puchalapalli.Serialization.csproj">
+      <Project>{723EA3B1-EA74-4B5A-9557-729C38967C61}</Project>
+      <Name>Puchalapalli.Serialization</Name>
+    </ProjectReference>
+    <ProjectReference Include="$(VSDirSourcePuchalapalli)\Puchalapalli.WPF\Puchalapalli.WPF.Assets\Puchalapalli.WPF.Assets.csproj">
+      <Project>{0be3f4f9-6e0f-4de1-9684-6bf7046b1d8e}</Project>
+      <Name>Puchalapalli.WPF.Assets</Name>
+    </ProjectReference>
+    <ProjectReference Include="$(VSDirSourcePuchalapalli)\Puchalapalli.WPF\Puchalapalli.WPF.Base\Puchalapalli.WPF.Base.csproj">
+      <Project>{7CB5B492-356D-4BE8-AC0E-850BD38C02C4}</Project>
+      <Name>Puchalapalli.WPF.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="$(VSDirSourcePuchalapalli)\Puchalapalli.WPF\Puchalapalli.WPF\Puchalapalli.WPF.csproj">
+      <Project>{CCA44F7E-C98B-466E-80CE-6EC0A2FEA799}</Project>
+      <Name>Puchalapalli.WPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="$(VSDirSourcePuchalapalliControls)\Puchalapalli.WPF.Controls.FileSystemExplorer\Puchalapalli.WPF.Controls.FileSystemExplorer.csproj">
+      <Project>{2A49A5ED-CF5A-41A2-838D-3A7965BD8EA6}</Project>
+      <Name>Puchalapalli.WPF.Controls.FileSystemExplorer</Name>
+    </ProjectReference>
+    <ProjectReference Include="$(VSDirSourcePuchalapalli)\Puchalapalli.Presentation\Puchalapalli.Presentation\Puchalapalli.Presentation.csproj">
+      <Project>{c569b175-fa58-4d00-81f6-40e0d0d2df68}</Project>
+      <Name>Puchalapalli.Presentation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Puchalapalli\src\Puchalapalli.Aspects\Puchalapalli.Aspects.Diagnostics\Puchalapalli.Aspects.Diagnostics.csproj">
+      <Project>{115e61f1-a3fc-4805-ac2f-0ddca7e02a31}</Project>
+      <Name>Puchalapalli.Aspects.Diagnostics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Puchalapalli\src\Puchalapalli.Base\Puchalapalli.Base.Fody\Puchalapalli.Base.Fody.csproj">
+      <Project>{df89d148-17d3-4ff9-a3e9-b3ec87542613}</Project>
+      <Name>Puchalapalli.Base.Fody</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Puchalapalli\src\Puchalapalli.Core\src\Puchalapalli.Core\Puchalapalli.Core.csproj">
+      <Project>{fbbb2057-ad6d-4929-b844-449ce239796e}</Project>
+      <Name>Puchalapalli.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Puchalapalli\src\Puchalapalli.WPF.Controls\src\Puchalapalli.WPF.Controls\Puchalapalli.WPF.Controls.csproj">
+      <Project>{ad6d41ad-4586-4611-9d06-1326f0e29c25}</Project>
+      <Name>Puchalapalli.WPF.Controls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Icons\Axialis-Alt.ico" />
+    <Resource Include="Assets\Icons\Axialis.ico" />
+    <Resource Include="Assets\Icons\DefaultIcon.ico" />
+    <Resource Include="Assets\Icons\Folder-Axialis.ico" />
+    <Resource Include="Assets\Icons\Folder-Colors.ico" />
+    <Resource Include="Assets\Icons\Folder.ico" />
+    <Resource Include="Assets\Icons\Library-File-Paint.ico" />
+    <Resource Include="Assets\Icons\Library-File.ico" />
+    <Resource Include="Assets\Icons\Library.ico" />
+    <Resource Include="Assets\Icons\Sets-Star.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FodyWeavers.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties BuildVersion_StartDate="2000/1/1" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\..\..\packages\Fody.1.29.4\build\dotnet\Fody.targets" Condition="Exists('..\..\..\packages\Fody.1.29.4\build\dotnet\Fody.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\..\packages\Fody.1.29.4\build\dotnet\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\Fody.1.29.4\build\dotnet\Fody.targets'))" />
+    <Error Condition="!Exists('..\..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <Import Project="..\..\..\packages\PostSharp.4.3.24\tools\PostSharp.targets" Condition="Exists('..\..\..\packages\PostSharp.4.3.24\tools\PostSharp.targets')" />
+  <Target Name="EnsurePostSharpImported" BeforeTargets="BeforeBuild" Condition="'$(PostSharp30Imported)' == ''">
+    <Error Condition="!Exists('..\..\..\packages\PostSharp.4.3.24\tools\PostSharp.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://www.postsharp.net/links/nuget-restore." />
+    <Error Condition="Exists('..\..\..\packages\PostSharp.4.3.24\tools\PostSharp.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://www.postsharp.net/links/nuget-restore." />
+  </Target>
+  <Import Project="..\..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
